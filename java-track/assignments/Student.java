@@ -1,5 +1,3 @@
-// work to do:
-//Round GPA
 //Make sure Legacy BB name is set right
 
 
@@ -73,8 +71,6 @@ public class Student
 	public Student createLegacy(Student p1, Student p2)
 	{
 		Integer maxcred;
-		String first = p1.firstname;
-		String last = p2.lastname;
 		Integer id = p1.getStudentID() + p2.getStudentID();
 		double avgpa = (p1.getGPA() + p2.getGPA()) / 2;
 		if (p1.getCredits() > p2.getCredits()){
@@ -83,7 +79,7 @@ public class Student
 		else{
 			maxcred = p2.getCredits();
 		}
-		Student legacy = new Student(first, last, id);
+		Student legacy = new Student(p2.getName(), p1.getName(), id);
 		legacy.credits = maxcred;
 		legacy.gpa = avgpa;
 		return legacy;
@@ -127,8 +123,8 @@ public class Student
 	System.out.println(s1.getGPA());
 	Student s2 = new Student("katie", "monsky", 123);
 	Student bb = s2.createLegacy(s2, s1);
-	System.out.println(bb.getName());
-	System.out.println(bb.getGPA());
+	System.out.println(bb.firstname);
+	System.out.println(bb.lastname);
 	System.out.println(s1.getGPA());
 
 
