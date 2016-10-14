@@ -20,7 +20,11 @@ public class MomBot extends Robot {
 		Robot nb = mb1.makeBaby(r1);
 		System.out.println(r1);
 		System.out.println(mb1);
-		System.out.println(nb);
+		System.out.println(nb.getName());
+		MomBot a = new MomBot("Sharon", 0, 0, 0 , 0);
+		Robot b = new Robot("Bill", 1, 1, 1, 1);
+		Robot c = a.makeBaby(b);
+		System.out.println(c.getName());
 		
 	}
 }

@@ -18,6 +18,7 @@ public class PushBot extends Robot {
 			r2.turnRobot(oldori);
 			r2.changeSpeed(oldspeed);
 		}
+		else return;
 	}
 	public static void main(String args[])
 	{
