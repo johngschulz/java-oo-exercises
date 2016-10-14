@@ -2,10 +2,10 @@
 public class Robot {
 	//Fields: The robot has 5 fields
 	private String name;
-	private int positionx;
-	private int positiony;
-	private int speed;
-	private int orientation;
+	protected int positionx;
+	protected int positiony;
+	protected int speed;
+	protected int orientation;
 	
 	//Methods/ Behaviors:
 	//Create a robot (constructor)
@@ -18,10 +18,7 @@ public class Robot {
 		this.orientation = orientation;
 	}
 	
-	//Get the name
-	//Get the position
-	//Get the speed
-	//Get the orientation
+
 	
 	public String getName()
 	{
@@ -47,14 +44,14 @@ public class Robot {
 	//Change speed
 	public void changeSpeed(int newSpeed)
 	{
-		this.speed = this.speed + newSpeed;
+		this.speed = newSpeed;
 	}
 	//Rotate orientation by +-90 degrees
 	public void turnRobot(int newOrientation)
 	{
 		if(newOrientation % 90 == 0)
 		{
-			this.orientation = (this.orientation + newOrientation) % 360;
+			this.orientation = (newOrientation) % 360;
 		}
 		else
 		{
