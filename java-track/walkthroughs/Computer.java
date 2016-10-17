@@ -1,26 +1,12 @@
 public class Computer {
 	
-	//Fields:
-	//memory - int
-	//size - double
-	//processor - double
-	//brand - String
 
 	private int memory;
-	private double size;
+	protected double size;
 	private double processor;
 	private String brand;
 	
-	//Behaviors:
-	
-	//Create a computer (constructor)
-	//Get the brand name
-	//Get the size
-	//Get the processing speed
-	//Get the memory
-	//Add memory
-	//Swap out the processor
-	//Display information as a String
+
 	public Computer(int memory, double size, double processor, String brand)
 	{
 		this.memory = memory;
@@ -49,7 +35,7 @@ public class Computer {
 	
 	public void addMemory(int newMemory)
 	{
-		if(this.memory + newMemory > 8)
+		if(this.memory + newMemory > 16)
 		{
 			return;
 		}
