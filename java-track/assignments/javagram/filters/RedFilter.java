@@ -1,12 +1,12 @@
 package javagram.filters;
 
-import javagram.Picture;
 import java.awt.Color;
+import javagram.Picture;
 
-public class BlueFilter implements Filter {
+public class RedFilter implements Filter{
 
+	@Override
 	public Picture process(Picture original) {
-		
 		Picture processed = new Picture(original.width(), original.height());
         
 	    //get each pixel one by one
@@ -20,13 +20,12 @@ public class BlueFilter implements Filter {
 	          int g = c.getGreen();
 	          int b = c.getBlue();
 	          
-	          int newBlue = (r + g + b) / 3;
 	          
-	          processed.set(i, j, new Color(0, 0, newBlue));
-	    	  
-	      }
+	          int newRed = (r + g + b) / 3;
+	          
+	          processed.set(i, j, new Color(newRed, 0, 0));
+	      	}
 	    }
-		
 		return processed;
 	}
 }

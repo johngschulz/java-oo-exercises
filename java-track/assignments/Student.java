@@ -1,5 +1,3 @@
-//Make sure Legacy BB name is set right
-
 
 public class Student
 {
@@ -68,13 +66,13 @@ public class Student
 
  
 	}
-	public Student createLegacy(Student p1, Student p2)
+	public static Student createLegacy(Student p1, Student p2)
 	{
 		Integer maxcred;
 		Integer id = p1.getStudentID() + p2.getStudentID();
 		double avgpa = (p1.getGPA() + p2.getGPA()) / 2;
 		if (p1.getCredits() > p2.getCredits()){
-			maxcred = this.getCredits();
+			maxcred = p1.getCredits();
 		}
 		else{
 			maxcred = p2.getCredits();
@@ -122,7 +120,7 @@ public class Student
 	s1.submitGrade(3.0, 3);
 	System.out.println(s1.getGPA());
 	Student s2 = new Student("katie", "monsky", 123);
-	Student bb = s2.createLegacy(s2, s1);
+	Student bb = createLegacy(s2, s1);
 	System.out.println(bb.firstname);
 	System.out.println(bb.lastname);
 	System.out.println(s1.getGPA());
